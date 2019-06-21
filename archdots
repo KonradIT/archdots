@@ -1,0 +1,51 @@
+#!/usr/bin/python
+
+from bluetoothctl import Bluetoothctl
+import subprocess
+import time
+ADDRESS="1C:52:16:29:CF:93"
+
+def connectToAirDots(addr):
+	print(bl.get_output("connect " + addr))
+	time.sleep(1)
+	if input("Did connect?").upper() == "N":
+		print(bl.get_output("connect " + addr))
+		time.sleep(1)
+	process = subprocess.Popen("pactl list sinks short".split(" "),  stdout=subprocess.PIPE)
+	out, err = process.communicate()
+	print(">>>", str(out))
+	while "bluez_sink." not in str(out):
+		process = subprocess.Popen("pactl list sinks short".split(" "), stdout=subprocess.PIPE)
+		out, err = process.communicate()
+	time.sleep(2)
+	print("Found sink")
+	print(">>>", str(out).split("\\t"))
+	subprocess.Popen("pactl set-default-sink bluez_sink." + addr.replace(":","_").replace("-","_")+".a2dp_sink", shell=True)
+	time.sleep(2)
+	for i in range(3):
+		time.sleep(0.2)
+		subprocess.Popen("play -q -n synth 0.1 sin 400", shell=True)
+		time.sleep(0.1)
+		subprocess.Popen("play -q -n synth 0.1 sin 600", shell=True)
+		time.sleep(0.1)
+		subprocess.Popen("play -q -n synth 0.1 sin 880", shell=True)
+if __name__ == "__main__":
+
+	print("Init bluetooth...")
+	bl = Bluetoothctl()
+	print("Ready!")
+	bl.start_scan()
+	print("Scanning for 10 seconds...")
+	for i in range(0, 10):
+		print(i)
+		time.sleep(1)
+	isLocked=False
+	for i in bl.get_discoverable_devices():	
+		print("Found device: %s (%s)" % (i.get("name"), i.get("mac_address")))
+
+		if i.get("mac_address") == ADDRESS.replace(":","-"):
+			isLocked=True
+			connectToAirDots(i.get("mac_address"))
+			break
+	if not isLocked:
+		connectToAirDots(ADDRESS)
