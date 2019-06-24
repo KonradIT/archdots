@@ -1,0 +1,64 @@
+<TaskerData sr="" dvi="1" tv="5.7.2">
+	<Profile sr="prof6" ve="2">
+		<cdate>1561407228104</cdate>
+		<edate>1561407558220</edate>
+		<id>6</id>
+		<mid0>5</mid0>
+		<nme>Unpair Redmi Headphones</nme>
+		<Event sr="con0" ve="2">
+			<code>461</code>
+			<App sr="arg0">
+				<appClass>org.kde.kdeconnect.UserInterface.MainActivity</appClass>
+				<appPkg>org.kde.kdeconnect_tp</appPkg>
+				<label>KDE Connect</label>
+			</App>
+			<Str sr="arg1" ve="3">unpair</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Int sr="arg7" val="0"/>
+		</Event>
+	</Profile>
+	<Task sr="task5">
+		<cdate>1561406896643</cdate>
+		<edate>1561407486379</edate>
+		<id>5</id>
+		<nme>Redmi Off</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>704475526</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<com.balda.bluetask.extra.ADDRESS>1C:52:16:29:CF:93</com.balda.bluetask.extra.ADDRESS>
+					<com.balda.bluetask.extra.ADDRESS-type>java.lang.String</com.balda.bluetask.extra.ADDRESS-type>
+					<com.balda.bluetask.extra.NAME>Redmi AirDots_R</com.balda.bluetask.extra.NAME>
+					<com.balda.bluetask.extra.NAME-type>java.lang.String</com.balda.bluetask.extra.NAME-type>
+					<com.balda.bluetask.extra.PROFILE>1</com.balda.bluetask.extra.PROFILE>
+					<com.balda.bluetask.extra.PROFILE-type>java.lang.Integer</com.balda.bluetask.extra.PROFILE-type>
+					<com.balda.bluetask.extra.TYPE>1</com.balda.bluetask.extra.TYPE>
+					<com.balda.bluetask.extra.TYPE-type>java.lang.Integer</com.balda.bluetask.extra.TYPE-type>
+					<com.balda.notificationlistener.extra.INT_VERSION_CODE>23</com.balda.notificationlistener.extra.INT_VERSION_CODE>
+					<com.balda.notificationlistener.extra.INT_VERSION_CODE-type>java.lang.Integer</com.balda.notificationlistener.extra.INT_VERSION_CODE-type>
+					<com.balda.notificationlistener.extra.OPERATION>3</com.balda.notificationlistener.extra.OPERATION>
+					<com.balda.notificationlistener.extra.OPERATION-type>java.lang.Integer</com.balda.notificationlistener.extra.OPERATION-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Disconnect Headset Redmi AirDots_R 1C:52:16:29:CF:93</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>com.balda.bluetask.extra.ADDRESS com.balda.bluetask.extra.NAME</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.balda.bluetask</Str>
+			<Str sr="arg2" ve="3">com.balda.bluetask.ui.FireForceConnect</Str>
+			<Int sr="arg3" val="60"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Done</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>
