@@ -30,7 +30,10 @@ def connectToAirDots(addr):
 		time.sleep(0.1)
 		subprocess.Popen("play -q -n synth 0.1 sin 880", shell=True)
 if __name__ == "__main__":
-
+	print("Kick Airdots from phone?")
+	if input(">>> [Y/n]: ").upper() == "Y":
+		subprocess.Popen("bash -c 'kdeconnect-cli -d $(kdeconnect-cli --list-available --id-only) --ping-msg unpair'", shell=True)
+		print("Kicked!")
 	print("Init bluetooth...")
 	bl = Bluetoothctl()
 	print("Ready!")
